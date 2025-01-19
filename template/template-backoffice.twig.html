@@ -1,0 +1,48 @@
+{% extends 'template-parent-back.twig.html' %} {% block titre %} BackOffice -
+Accueil {% endblock %} {% block header %}
+<div class="navbar bg-base-100">
+  <div class="flex-1">
+    <a class="btn btn-ghost text-xl" href="index.php">Backoffice</a>
+  </div>
+  <div class="flex-none z-50">
+    <ul class="menu menu-horizontal px-1">
+      <li>
+        <details>
+          <summary>Utilisateurs</summary>
+          <ul class="bg-base-100 rounded-t-none p-2">
+            <li>
+              <a href="index.php?page=users">Liste des utilisateurs</a>
+            </li>
+            <li>
+              <a href="index.php?page=create-user">Créer un utilisateur</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Posts</summary>
+          <ul class="bg-base-100 rounded-t-none p-2">
+            <li><a href="index.php?page=posts">Liste des posts</a></li>
+            <li><a href="index.php?page=create-post">Créer un post</a></li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details>
+          <summary>Catégories</summary>
+          <ul class="bg-base-100 rounded-t-none p-2">
+            <li>
+              <a href="index.php?page=categories">Liste des catégories</a>
+            </li>
+            <li>
+              <a href="index.php?page=create-categorie">Créer une catégorie</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li><a href="index.php?page=logout">Se déconnecter</a></li>
+    </ul>
+  </div>
+</div>
+{% endblock %}

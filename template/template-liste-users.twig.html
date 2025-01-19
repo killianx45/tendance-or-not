@@ -1,0 +1,32 @@
+{% extends 'template-parent-back.twig.html' %} {% block titre %}Liste des
+utilisateurs{% endblock %} 
+{% block content %}
+<div class="overflow-x-auto">
+  <table class="table">
+    <tr>
+      <th>ID</th>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Email</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.nom }}</td>
+        <td>{{ user.prenom }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <a class="btn btn-info" href="index.php?page=user-posts&id={{ user.id }}">Voir les posts</a>
+          <a class="btn btn-error" href="index.php?page=user-delete&id={{ user.id }}">Supprimer</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

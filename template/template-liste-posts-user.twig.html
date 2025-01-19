@@ -1,0 +1,48 @@
+{% extends 'template-parent-back.twig.html' %} {% block titre %}Liste des
+posts{% endblock %} {% block content %}
+<div class="overflow-x-auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Titre</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Catégorie</th>
+        <th>Date de création</th>
+        <th>Actions</th>
+        <th>Commentaires du post</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for post in user_posts %}
+      <tr>
+        <td>{{ post.titre }}</td>
+        <td>{{ post.description }}</td>
+        <td><img src="{{ post.image }}" alt="image du post" width="100" /></td>
+        <td>{{ post.nom_categorie }}</td>
+        <td>{{ post.created_at }}</td>
+        <td>
+          <a
+            class="btn btn-warning"
+            href="index.php?page=update-post&id={{ post.id }}"
+            >Modifier</a
+          >
+          <a
+            class="btn btn-error"
+            href="index.php?page=delete-post&id={{ post.id }}"
+            >Supprimer</a
+          >
+        </td>
+        <td>
+          <a
+            class="btn btn-info"
+            href="index.php?page=commentaires-post&id={{ post.id }}"
+            >Voir les commentaires</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

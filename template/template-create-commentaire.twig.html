@@ -1,0 +1,21 @@
+{% extends 'template-parent-back.twig.html' %} {% block titre %}Créer un
+commentaire{% endblock %} {% block content %}
+<div class="flex justify-center items-center">
+  <form action="" method="POST" class="flex flex-col gap-2 w-1/2">
+    <input type="hidden" name="name" value="store_commentaire" />
+    <input type="hidden" name="id_post" value="{{ id }}" />
+    <input type="hidden" name="id_user" value="{{ id_user }}" />
+    <label for="commentaire"></label>
+    <textarea
+      name="commentaire"
+      id="commentaire"
+      required
+      class="textarea textarea-bordered"
+      placeholder="Votre commentaire"
+    ></textarea>
+    <button class="btn btn-primary" type="submit">
+      Ajouter un commentaire
+    </button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'template-parent-back.twig.html' %} {% block titre %}Commentaires du
+post{% endblock %} {% block content %}
+<div class="overflow-x-auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Contenu</th>
+        <th>Date de création</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for commentaire in commentaires %}
+      <tr>
+        <td>{{ commentaire.contenu }}</td>
+        <td>{{ commentaire.created_at }}</td>
+        <td>
+          <a
+            class="btn btn-error"
+            href="index.php?page=delete-commentaire&id={{ commentaire.id }}"
+            >Supprimer</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
